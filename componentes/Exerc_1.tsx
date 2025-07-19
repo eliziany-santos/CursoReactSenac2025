@@ -14,7 +14,11 @@ export default function Exerc_1() {
   return (
     <div className="flex flex-col items-center p-6 space-y-4">
    
+<<<<<<< HEAD
       <div className="flex gap-4">
+=======
+      <div className="flex gap-4 pt-8">
+>>>>>>> e4f0df3 (Primeiro commit)
         <button
           onClick={() => setContador(contador + 1)}
           className="px-6 py-2 bg-green-600 text-white rounded-md hover:bg-green-700 transition"
@@ -22,7 +26,11 @@ export default function Exerc_1() {
           SOMA
         </button>
         <button
+<<<<<<< HEAD
           onClick={decrementar}
+=======
+          onClick={(decrementar) }
+>>>>>>> e4f0df3 (Primeiro commit)
           className="px-6 py-2 bg-red-600 text-white rounded-md hover:bg-red-700 transition"
         >
           SUBTRAI
@@ -35,6 +43,7 @@ export default function Exerc_1() {
       </div>
 
   
+<<<<<<< HEAD
       {contador === 0 ? (
         <p className="text-red-500 mt-2">Não é permitido abaixo de zero</p>
       ) : null}
@@ -43,6 +52,15 @@ export default function Exerc_1() {
       {contador >= 0 ? (
         <p className="text-green-600 mt-2">Contador é maior ou igual a zero</p>
       ) : null}
+=======
+      {contador === 0 ? (<p className="text-red-500 mt-2">Não é permitido abaixo de zero</p>) : null}
+
+     
+      {contador  >= 0 ? (<p className="text-green-600 mt-2">Contador é maior ou igual a zero</p>) : null}
+
+    
+
+>>>>>>> e4f0df3 (Primeiro commit)
     </div>
   );
 }

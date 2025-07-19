@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 "use client";
 
+=======
+>>>>>>> e4f0df3 (Primeiro commit)
 import { useState } from "react";
 
 export default function Exerc_4() {
@@ -12,6 +15,10 @@ export default function Exerc_4() {
     setTarefa("");
   }
 
+<<<<<<< HEAD
+=======
+  {/*.trim limpa string que o usuário digitou */}
+>>>>>>> e4f0df3 (Primeiro commit)
   return (
     <div className="max-w-md">
       <div className="flex gap-2 mb-4">
