@@ -1,6 +1,6 @@
-<<<<<<< HEAD
+
 "use client";
-=======
+
 import { useState } from "react";
 
 export default function Exerc_3() {
@@ -99,4 +99,4 @@ export default function Exerc_3() {
 );
 }
 */
->>>>>>> e4f0df3 (Primeiro commit)
+

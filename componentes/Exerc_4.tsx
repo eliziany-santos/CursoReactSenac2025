@@ -32,7 +32,7 @@ export default function Exerc_4() {
       <ul className="list-disc pl-5 space-y-2">
         {lista.map((item, index) => (
           <li key={index} className="text-gray-800">
-            {item}
+           {index} - {item}
           </li>
         ))}
       </ul>
@@ -48,4 +48,10 @@ export default function Exerc_4() {
     setTarefa("");
     } 
 
+    function adicionarTarefa() {
+    if(tarefa != ""){
+      setLista([...lista, tarefa])
+      setTarefa("");
+    }
+    }
 */
