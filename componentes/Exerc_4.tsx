@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-"use client";
-
-=======
->>>>>>> e4f0df3 (Primeiro commit)
 import { useState } from "react";
 
 export default function Exerc_4() {
@@ -10,15 +5,12 @@ export default function Exerc_4() {
   const [lista, setLista] = useState<string[]>([]);
 
   function adicionarTarefa() {
-    if (tarefa.trim() === "") return;
-    setLista([...lista, tarefa.trim()]);
-    setTarefa("");
+    if (tarefa.trim() === "") return; 
+    setLista([...lista, tarefa.trim()]); 
+    setTarefa(""); 
   }
 
-<<<<<<< HEAD
-=======
-  {/*.trim limpa string que o usuário digitou */}
->>>>>>> e4f0df3 (Primeiro commit)
+
   return (
     <div className="max-w-md">
       <div className="flex gap-2 mb-4">
@@ -47,3 +39,13 @@ export default function Exerc_4() {
     </div>
   );
 }
+
+
+
+    /*function adicionarTarefa() {
+    if (tarefa === "") return;
+    setLista([...lista, tarefa]);
+    setTarefa("");
+    } 
+
+*/
