@@ -1,4 +1,4 @@
-import { userProps } from "./page";
+/*import { userProps } from "./page";
 
 export default async function Page() {
 
@@ -63,9 +63,9 @@ export default async function Page() {
 
         </div>
       </div>
-    </div> */;
+        </div> */
 
-  { /* <div id="container" className="flex">
+  /* <div id="container" className="flex">
 
       <div id="esquerda" className="bg-blue-500 m-20" >
         <p>Esquerda</p>
@@ -96,14 +96,13 @@ export default async function Page() {
 
         </div>
       </div>
-    </div> */
+    </div> 
   }
 
 
 
 
      >
-    ;
-  ;
+   
 
-}
+}*/

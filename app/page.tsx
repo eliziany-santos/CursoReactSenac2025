@@ -1,3 +1,7 @@
+import { Suspense } from "react";
+import Loading from "./loading";
+import Posts from "@/componentes/posts";
+
 type userProps = {
   id: number,
   title: string,
@@ -7,13 +11,20 @@ type userProps = {
 
 
 }
+
+
+
 export default async function Page() {
 
-  const resposta = await fetch("https://fakestoreapi.com/products")
+  const resposta = await fetch(`https://fakestoreapi.com/products`)
   const dados: userProps[] = await resposta.json()
   console.log(dados)
   return (
     <>
+<div>
+        <Suspense fallback={<Loading/>}>
+        <Posts />
+      </Suspense>
 
       <div className="bg-gray-400  h-screen  w-60 absolute  text-white pl-3 pt-10 ">
         <h1 className="font-bold text-2xl">Menu</h1>
@@ -37,15 +48,15 @@ export default async function Page() {
                 <p className="text-emerald-500 font-bold"> Valor: {item.price}</p>
                 <h1 className="text-xs">Descrição:{item.description}</h1>
                 
-               <button className="  flex justify-center border-2 w-50 bg-blue-600 text-white">Ver Mais</button>
-              
+               <button  className="  flex justify-center border-2 w-50 bg-blue-600 text-white">Ver Mais</button>
+           
                </div>
 
             </div>
           </div>
         )}
       </div>
-
+      </div>
       
     </>
   );
