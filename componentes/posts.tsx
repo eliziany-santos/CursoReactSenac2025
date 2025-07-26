@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Page from "@/app/(paginas)/usuarios/[id]/page";
 
 
 
@@ -19,8 +20,11 @@ export default async function Posts({id}: {id: string}) {
   const dados: userProps = await resposta.json();
   console.log(dados)
 
+  await new Promise((resolve) => setTimeout(resolve,4000));
+
+
   return (
-    <div className="">
+    <div className="pt-10">
      
 
       {
@@ -31,7 +35,7 @@ export default async function Posts({id}: {id: string}) {
         <img src={dados.image} />
         </div>
         <p className="pt-10 text-emerald-500 font-bold" > {dados.price}</p>
-        <p className="pt-5 text-xs" >{dados.description}</p>
+        <p className="pt-5 text-xs w-80" >{dados.description}</p>
 
         </div>
 

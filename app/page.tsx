@@ -1,6 +1,7 @@
 import { Suspense } from "react";
 import Loading from "./loading";
 import Posts from "@/componentes/posts";
+import UsuarioList from "./page_api_usuarios_detalhados";
 
 type userProps = {
   id: number,
@@ -19,11 +20,14 @@ export default async function Page() {
   const resposta = await fetch(`https://fakestoreapi.com/products`)
   const dados: userProps[] = await resposta.json()
   console.log(dados)
+
+  
   return (
     <>
 <div>
+
         <Suspense fallback={<Loading/>}>
-        <Posts />
+        <Posts id = {id}/>
       </Suspense>
 
       <div className="bg-gray-400  h-screen  w-60 absolute  text-white pl-3 pt-10 ">
