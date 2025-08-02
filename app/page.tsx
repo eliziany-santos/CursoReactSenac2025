@@ -3,6 +3,7 @@
 //se não especifica o metodo, é sempre GET
 
 import { userProps } from "@/tipos"
+import Link from 'next/link'
 
 export default async function Index() {
 
@@ -11,6 +12,7 @@ export default async function Index() {
   console.log(dados)
   return (
     <div>
+      <Link href="/cadastro">Cadastrar Usuário</Link>
         {dados.map((item) => (
           <div key = {item.id}>
             <h1>Nome: {item.name} email: {item.email}</h1>
