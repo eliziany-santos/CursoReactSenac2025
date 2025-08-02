@@ -1,3 +1,4 @@
+import FormularioUser from "@/componentes/formularioUser";
 
 
 export default async function Index({params} : {params: Promise<{id: string}>}){
@@ -10,6 +11,7 @@ const{id} = await params
 
     return(
         <div>
+            <FormularioUser id = {dados.id} name = {dados.name} email = {dados.email}/>
             <h1>EDITAR</h1>
         </div>
     )

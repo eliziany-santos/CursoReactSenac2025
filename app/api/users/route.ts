@@ -52,3 +52,18 @@ export async function POST(request: Request){
     })
         } 
 
+
+
+
+        
+//PARA EDITAR
+export async function PUT(request: Request){
+
+
+    const{id, name, email}= await request.json()
+
+    await db.query("UPDATE users SET name=?, email=? where id=?",[name,email,id])
+    return new Response(JSON.stringify({valor: true}))
+        
+   
+}
