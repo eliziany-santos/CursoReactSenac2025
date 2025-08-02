@@ -35,7 +35,20 @@ export async function GET(request: Request){
         status: 500
     })
    }
-
-
     
 }
+
+//post
+
+export async function POST(request: Request){
+    //desestruturação de objetos
+    const {name, email} = await request.json();
+  //  const query = "INSERT INTO users(name,email) VALUES (${name},${email})" outra opção
+    const[result] = await db.query("INSERT INTO users(name,email) VALUES (?,?)",[name,email])
+   
+    return new Response(JSON.stringify(result),{ //estou pegando as informações que estão em rows e convertendo em json
+        status: 201,
+        headers: {'Content-Type': 'application/json'}
+    })
+        } 
+
