@@ -38,7 +38,7 @@ export async function GET(request: Request){
     
 }
 
-<<<<<<< HEAD
+
 //para teste http://localhost:3000/api/users
 //post para o formulario sem a tag form
 
@@ -68,40 +68,50 @@ export async function POST(request: Request){
 
     }
 
+}
 
 
 
-=======
-//post
+//post sema  tag for
 
-export async function POST(request: Request){
-    //desestruturação de objetos
-    const {name, email} = await request.json();
->>>>>>> 8caa4f1503fbd4aee219a6130d1edc2c4259ede0
-  //  const query = "INSERT INTO users(name,email) VALUES (${name},${email})" outra opção
-    const[result] = await db.query("INSERT INTO users(name,email) VALUES (?,?)",[name,email])
+// export async function POST(request: Request){
+//     //desestruturação de objetos
+//     const {name, email} = await request.json();
+
+//   //  const query = "INSERT INTO users(name,email) VALUES (${name},${email})" outra opção
+//     const[result] = await db.query("INSERT INTO users(name,email) VALUES (?,?)",[name,email])
    
-    return new Response(JSON.stringify(result),{ //estou pegando as informações que estão em rows e convertendo em json
-        status: 201,
-        headers: {'Content-Type': 'application/json'}
-    })
-        } 
+//     return new Response(JSON.stringify(result),{ //estou pegando as informações que estão em rows e convertendo em json
+//         status: 201,
+//         headers: {'Content-Type': 'application/json'}
+//     })
+//         } 
 
 
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 8caa4f1503fbd4aee219a6130d1edc2c4259ede0
         
 //PARA EDITAR
+// export async function PUT(request: Request){
+
+
+//     const{id, name, email}= await request.json()
+
+//     await db.query("UPDATE users SET name=?, email=? where id=?",[name,email,id])
+//     return new Response(JSON.stringify({valor: true}))
+        
+   
+
+// }
+
+
 export async function PUT(request: Request){
 
 
     const{id, name, email}= await request.json()
 
     await db.query("UPDATE users SET name=?, email=? where id=?",[name,email,id])
-    return new Response(JSON.stringify({valor: true}))
+    return Response.json({sucesso:true})
         
    
+
 }

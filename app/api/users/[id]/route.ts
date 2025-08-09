@@ -35,3 +35,14 @@ export async function PUT(request: Request, {params} : {params : {id : string}})
 
     });
 }
+
+
+//PARA DELETAR
+export async function DELETE(request: Request}){
+
+    const {id} = await request.json();
+
+   await db.query("DELETE FROM users WHERE ID = ?",{Id})
+   
+    return Response.json({sucesso: true})
+}
