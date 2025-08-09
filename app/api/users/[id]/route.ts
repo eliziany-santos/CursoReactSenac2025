@@ -38,7 +38,7 @@ export async function PUT(request: Request, {params} : {params : {id : string}})
 
 
 //PARA DELETAR
-export async function DELETE(request: Request}){
+export async function DELETE(request: Request){
 
     const {id} = await request.json();
 

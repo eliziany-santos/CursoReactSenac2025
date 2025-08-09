@@ -12,7 +12,7 @@ const{id} = await params
 
     return(
         <div>
-            <FormularioUser id = {dados.id} nome = {dados.nome} email = {dados.email}/>
+            <FormularioUser id = {dados.id} name = {dados.nome} email = {dados.email}/>
             <h1>EDITAR</h1>
         </div>
     )

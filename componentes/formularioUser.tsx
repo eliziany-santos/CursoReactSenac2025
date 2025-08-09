@@ -70,12 +70,13 @@
 
 
 
+import { Salvar } from "@/app/(servicos)/usuario";
 import { userProps } from "@/tipos";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 
-export default function Formulario({id,nome="",email=""}: userProps){
+export default function Formulario({id,name="",email=""}: userProps){
 
     const [userid, setUserId] = useState<number | undefined>(id) //ou o id vem numero se já existe ou undefined se não existe
     const [nome,setNome] = useState("")
@@ -91,23 +92,33 @@ export default function Formulario({id,nome="",email=""}: userProps){
         }
         try{
             const metodo = userid ? "PUT" : "POST" ;
+            await Salvar(form,metodo)
+            rota.push("/")
      
-            const resposta = await fetch(`${process.env.NEXT_PUBLIC_API_ROUTE}/`,{
-                method: metodo,
-                headers: {"Content-Type": "application/json"
-                },
-               body: JSON.stringify(form)
-            })
-            const dados = await resposta.json()
-            if(dados){
-                rota.push("/")
-            }
+            // const resposta = await fetch(`${process.env.NEXT_PUBLIC_API_ROUTE}/`,{
+            //     method: metodo,
+            //     headers: {"Content-Type": "application/json"
+            //     },
+            //    body: JSON.stringify(form)
+            // })
+            // const dados = await resposta.json()
+            // if(dados){
+            //     rota.push("/")
+            // }
         }catch(error){
 
         }
         
     }
-
+    async function Deletar(){
+        await fetch(`${process.env.NEXT_PUBLIC_API_ROUTE}/user`,{
+            method: "DELETE",
+            headers: {"Content-Type": "application/json"
+            },
+           body: JSON.stringify(id:userid))
+        })
+         
+    }
 
     return(
         <div>
@@ -116,11 +127,12 @@ export default function Formulario({id,nome="",email=""}: userProps){
                 <input value="{email}" onChange={(e) => setEmail(e.target.value)} type="email" placeholder="Digite seu email" name="email"/>
                 <button type="submit">Enviar</button>
                     
-                {id && <button>Excluir<button/>}
+                {id && <button onClick={Deletar}>Excluir<button/>}
             </form>
         </div>
     )
 }
+
 
 
 
