@@ -8,7 +8,10 @@ import Link from 'next/link'
 export default async function Index() {
 
   const resposta = await fetch(`${process.env.NEXT_PUBLIC_API_ROUTE}/api/users`)
+<<<<<<< HEAD
   //abaixo, tirar o json para conseguirmos us
+=======
+>>>>>>> 8caa4f1503fbd4aee219a6130d1edc2c4259ede0
   const dados : userProps [] =  await resposta.json() //retirando o , lembrar de colocar [] se for lista
   console.log(dados)
   return (
@@ -23,10 +26,13 @@ export default async function Index() {
             <button className="border-1">
             <Link href={`/editasUsuario/${item.id}`} >Editar Usuário</Link>
             </button>
+<<<<<<< HEAD
 
             {/* <button className="border-1">
             <Link href={`/editasUsuario/${item.id}`} >Deletar Usuário</Link>
             </button> */}
+=======
+>>>>>>> 8caa4f1503fbd4aee219a6130d1edc2c4259ede0
           </div>
         ))}
 
@@ -34,4 +40,7 @@ export default async function Index() {
 
   )
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 8caa4f1503fbd4aee219a6130d1edc2c4259ede0

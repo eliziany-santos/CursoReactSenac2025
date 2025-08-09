@@ -38,6 +38,7 @@ export async function GET(request: Request){
     
 }
 
+<<<<<<< HEAD
 //para teste http://localhost:3000/api/users
 //post para o formulario sem a tag form
 
@@ -70,6 +71,13 @@ export async function POST(request: Request){
 
 
 
+=======
+//post
+
+export async function POST(request: Request){
+    //desestruturação de objetos
+    const {name, email} = await request.json();
+>>>>>>> 8caa4f1503fbd4aee219a6130d1edc2c4259ede0
   //  const query = "INSERT INTO users(name,email) VALUES (${name},${email})" outra opção
     const[result] = await db.query("INSERT INTO users(name,email) VALUES (?,?)",[name,email])
    
@@ -81,6 +89,10 @@ export async function POST(request: Request){
 
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 8caa4f1503fbd4aee219a6130d1edc2c4259ede0
         
 //PARA EDITAR
 export async function PUT(request: Request){
